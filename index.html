@@ -720,7 +720,7 @@
                 </div>
             </section>
 
-            <!-- BEST SELLING PRODUCTS - EXACTLY AS IN YOUR IMAGE -->
+            <!-- BEST SELLING PRODUCTS -->
             <section style="margin-top: 60px; padding-bottom: 60px;">
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
                     <div style="display: flex; align-items: center; gap: 16px;">
@@ -848,6 +848,258 @@
                             <div class="product-name">Small BookShelf</div>
                             <div class="product-price">
                                 <span class="current-price">$360</span>
+                            </div>
+                        </div>
+                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
+                            Add To Cart
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- NEW: EXPLORE OUR PRODUCTS - EXACTLY AS IN THE IMAGE -->
+            <section style="margin-top: 60px; padding-bottom: 60px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <div class="red-bar"></div>
+                        <div style="color: var(--primary-red); font-weight: 600; font-size: 14px; letter-spacing: 1px;">OUR PRODUCTS</div>
+                    </div>
+                    <div style="display: flex; gap: 12px;">
+                        <button style="width: 46px; height: 46px; border-radius: 50%; background: #f5f5f5; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;">←</button>
+                        <button style="width: 46px; height: 46px; border-radius: 50%; background: #f5f5f5; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;">→</button>
+                    </div>
+                </div>
+
+                <h2 class="section-title" style="margin-bottom: 24px;">Explore Our Products</h2>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px;">
+                    
+                    <!-- Card 1: Bread Dry Dog Food -->
+                    <div class="product-card" style="min-width: auto;">
+                        <div class="product-image-container">
+                            <img src="https://picsum.photos/id/30/320/260" alt="Bread Dry Dog Food">
+                            <div class="card-icons">
+                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
+                                    </svg>
+                                </div>
+                                <div class="card-icon" onclick="alert('Quick view opened for Bread Dry Dog Food'); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Bread Dry Dog Food</div>
+                            <div class="product-price">
+                                <span class="current-price">$20</span>
+                            </div>
+                        </div>
+                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
+                            Add To Cart
+                        </div>
+                    </div>
+
+                    <!-- Card 2: CANON EOS DSLR Camera -->
+                    <div class="product-card" style="min-width: auto;">
+                        <div class="product-image-container">
+                            <img src="https://picsum.photos/id/201/320/260" alt="CANON EOS DSLR Camera">
+                            <div class="card-icons">
+                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
+                                    </svg>
+                                </div>
+                                <div class="card-icon" onclick="alert('Quick view opened for CANON EOS DSLR Camera'); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">CANON EOS DSLR Camera</div>
+                            <div class="product-price">
+                                <span class="current-price">$650</span>
+                            </div>
+                        </div>
+                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
+                            Add To Cart
+                        </div>
+                    </div>
+
+                    <!-- Card 3: ASUS FHD Gaming Laptop -->
+                    <div class="product-card" style="min-width: auto;">
+                        <div class="product-image-container">
+                            <img src="https://picsum.photos/id/160/320/260" alt="ASUS FHD Gaming Laptop">
+                            <div class="card-icons">
+                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
+                                    </svg>
+                                </div>
+                                <div class="card-icon" onclick="alert('Quick view opened for ASUS FHD Gaming Laptop'); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">ASUS FHD Gaming Laptop</div>
+                            <div class="product-price">
+                                <span class="current-price">$899</span>
+                            </div>
+                        </div>
+                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
+                            Add To Cart
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Curology Product Set -->
+                    <div class="product-card" style="min-width: auto;">
+                        <div class="product-image-container">
+                            <img src="https://picsum.photos/id/251/320/260" alt="Curology Product Set">
+                            <div class="card-icons">
+                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
+                                    </svg>
+                                </div>
+                                <div class="card-icon" onclick="alert('Quick view opened for Curology Product Set'); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Curology Product Set</div>
+                            <div class="product-price">
+                                <span class="current-price">$45</span>
+                            </div>
+                        </div>
+                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
+                            Add To Cart
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Kids Electric Car -->
+                    <div class="product-card" style="min-width: auto;">
+                        <div class="product-image-container">
+                            <img src="https://picsum.photos/id/29/320/260" alt="Kids Electric Car">
+                            <div class="card-icons">
+                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
+                                    </svg>
+                                </div>
+                                <div class="card-icon" onclick="alert('Quick view opened for Kids Electric Car'); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Kids Electric Car</div>
+                            <div class="product-price">
+                                <span class="current-price">$299</span>
+                            </div>
+                        </div>
+                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
+                            Add To Cart
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Jr. Zoom Soccer Cleats -->
+                    <div class="product-card" style="min-width: auto;">
+                        <div class="product-image-container">
+                            <img src="https://picsum.photos/id/1016/320/260" alt="Jr. Zoom Soccer Cleats">
+                            <div class="card-icons">
+                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
+                                    </svg>
+                                </div>
+                                <div class="card-icon" onclick="alert('Quick view opened for Jr. Zoom Soccer Cleats'); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Jr. Zoom Soccer Cleats</div>
+                            <div class="product-price">
+                                <span class="current-price">$79</span>
+                            </div>
+                        </div>
+                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
+                            Add To Cart
+                        </div>
+                    </div>
+
+                    <!-- Card 7: GP11 Shooter USB Gamepad -->
+                    <div class="product-card" style="min-width: auto;">
+                        <div class="product-image-container">
+                            <img src="https://picsum.photos/id/1015/320/260" alt="GP11 Shooter USB Gamepad">
+                            <div class="card-icons">
+                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
+                                    </svg>
+                                </div>
+                                <div class="card-icon" onclick="alert('Quick view opened for GP11 Shooter USB Gamepad'); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">GP11 Shooter USB Gamepad</div>
+                            <div class="product-price">
+                                <span class="current-price">$49</span>
+                            </div>
+                        </div>
+                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
+                            Add To Cart
+                        </div>
+                    </div>
+
+                    <!-- Card 8: Quilted Satin Jacket -->
+                    <div class="product-card" style="min-width: auto;">
+                        <div class="product-image-container">
+                            <img src="https://picsum.photos/id/160/320/260" alt="Quilted Satin Jacket">
+                            <div class="card-icons">
+                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
+                                    </svg>
+                                </div>
+                                <div class="card-icon" onclick="alert('Quick view opened for Quilted Satin Jacket'); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Quilted Satin Jacket</div>
+                            <div class="product-price">
+                                <span class="current-price">$129</span>
                             </div>
                         </div>
                         <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
@@ -1003,7 +1255,7 @@
                 }
             }
         }
-        // NEW HELPER FOR BEST SELLING CARDS
+        // NEW HELPER FOR BEST SELLING + EXPLORE CARDS
         function addToCartFromBest(el) {
             cartCount++
             document.getElementById('cart-count').textContent = cartCount
