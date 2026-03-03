@@ -2,125 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusive - Shop Premium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Exclusive - Mobile Shop</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600&amp;display=swap');
-        :root {
-            --primary-red: #DB4444;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: 'Inter', system_ui, sans-serif;
-            background-color: #FAFAFA;
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
             color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
         }
-        .header {
+
+        /* MOBILE FIRST STYLES (0-767px) */
+        .mobile-header {
+            background: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            background: white;
+            z-index: 100;
             border-bottom: 1px solid #eee;
-            padding: 20px 0;
         }
-        .header-content {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 24px;
+
+        .mobile-logo {
+            font-size: 20px;
             font-weight: 700;
-            color: #000;
-            text-decoration: none;
         }
-        .nav-links {
+
+        .mobile-icons {
             display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #000;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: var(--primary-red);
-        }
-        .nav-links a.active {
-            position: relative;
-        }
-        .nav-links a.active:after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--primary-red);
-        }
-        .header-right {
-            display: flex;
+            gap: 16px;
             align-items: center;
-            gap: 24px;
         }
-        .search-container {
-            position: relative;
-            width: 320px;
-        }
-        .search-container input {
-            width: 100%;
-            padding: 10px 20px 10px 45px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-            transition: all 0.3s;
-        }
-        .search-container input:focus {
-            outline: none;
-            border-color: var(--primary-red);
-            box-shadow: 0 0 0 3px rgba(219, 68, 68, 0.1);
-        }
-        .search-icon {
-            position: absolute;
-            left: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 18px;
-            height: 18px;
-        }
-        .icon-btn {
+
+        .mobile-icons button {
             background: none;
             border: none;
-            cursor: pointer;
-            position: relative;
-            transition: transform 0.3s;
-        }
-        .icon-btn:hover {
-            transform: scale(1.1);
-        }
-        .cart-icon {
+            font-size: 22px;
             position: relative;
         }
-        .cart-count {
+
+        .cart-badge {
             position: absolute;
-            top: -4px;
-            right: -6px;
-            background: var(--primary-red);
+            top: -5px;
+            right: -8px;
+            background: #DB4444;
             color: white;
             font-size: 10px;
-            font-weight: 600;
             width: 18px;
             height: 18px;
             border-radius: 50%;
@@ -128,1535 +64,818 @@
             align-items: center;
             justify-content: center;
         }
-        .main-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            gap: 40px;
-        }
-        .sidebar {
-            width: 220px;
-            flex-shrink: 0;
-            padding-top: 30px;
-        }
-        .sidebar ul {
-            list-style: none;
-        }
-        .sidebar li {
-            padding: 12px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 16px;
-            font-weight: 500;
-            color: #333;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .sidebar li:hover {
-            color: var(--primary-red);
-            padding-left: 8px;
-        }
-        .sidebar li:after {
-            content: '›';
-            font-size: 20px;
-            opacity: 0.6;
-        }
-        .hero-section {
-            flex: 1;
-            margin-top: 30px;
-            position: relative;
-            height: 420px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-        .slider-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        .slider-track {
-            display: flex;
-            height: 100%;
-            transition: transform 0.6s cubic-bezier(0.32, 0.72, 0, 1);
-        }
-        .slide {
-            min-width: 100%;
-            height: 100%;
-            background: #000;
-            display: flex;
-            align-items: center;
-            position: relative;
-            color: white;
-        }
-        .slide-content {
-            padding-left: 80px;
-            max-width: 45%;
-            z-index: 2;
-        }
-        .slide-content .apple-logo {
-            font-size: 42px;
-            margin-bottom: 8px;
-            display: block;
-        }
-        .slide-content h2 {
-            font-size: 16px;
-            font-weight: 400;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-        }
-        .slide-content h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 48px;
-            line-height: 1.1;
-            font-weight: 600;
-            margin-bottom: 24px;
-        }
-        .shop-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            padding: 12px 28px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 15px;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        .shop-btn:hover {
-            background: white;
-            color: #000;
-            transform: translateY(-2px);
-        }
-        .slide-image {
-            position: absolute;
-            right: 40px;
-            bottom: 0;
-            height: 92%;
-            object-fit: contain;
-            z-index: 1;
-            filter: drop-shadow(30px 30px 40px rgba(0, 0, 0, 0.4));
-        }
-        .slider-dots {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.4);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .dot.active {
-            background: var(--primary-red);
-            width: 32px;
-            border-radius: 20px;
-        }
-        .flash-sales {
-            margin-top: 60px;
-            padding-bottom: 60px;
-        }
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 20px;
-        }
-        .red-bar {
-            width: 20px;
-            height: 40px;
-            background: var(--primary-red);
-            border-radius: 4px;
-        }
-        .section-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 28px;
-            font-weight: 600;
-        }
-        .timer-container {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            margin-left: auto;
-        }
-        .timer-box {
-            text-align: center;
-            background: white;
-            padding: 8px 14px;
-            border-radius: 6px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-            min-width: 68px;
-        }
-        .timer-number {
-            font-family: 'Poppins', sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            line-height: 1;
-            color: #000;
-        }
-        .timer-label {
-            font-size: 11px;
-            font-weight: 500;
-            color: #666;
-            text-transform: uppercase;
-        }
-        .flash-nav {
-            display: flex;
-            gap: 12px;
-            margin-left: 40px;
-        }
-        .flash-nav button {
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: #f5f5f5;
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            font-size: 24px;
+            background: none;
             border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
         }
-        .flash-nav button:hover {
-            background: #eee;
-            transform: scale(1.05);
-        }
-        .products-scroll {
-            display: flex;
-            gap: 24px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding: 10px 0 30px;
-            scrollbar-width: none;
-        }
-        .products-scroll::-webkit-scrollbar {
+
+        .mobile-nav {
             display: none;
-        }
-        .product-card {
-            min-width: 270px;
             background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-        }
-        .product-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 30px rgba(0,0,0,0.12);
-        }
-        .product-image-container {
-            height: 240px;
-            background: #f8f8f8;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .product-image-container img {
-            max-height: 210px;
-            width: auto;
-            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        .product-card:hover .product-image-container img {
-            transform: scale(1.12);
-        }
-        .discount-badge {
+            padding: 20px;
             position: absolute;
-            top: 18px;
-            left: 18px;
-            background: var(--primary-red);
-            color: white;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 4px;
-        }
-        .card-icons {
-            position: absolute;
-            top: 18px;
-            right: 18px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .card-icon {
-            width: 38px;
-            height: 38px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .card-icon:hover {
-            background: #fff;
-            transform: scale(1.15);
-        }
-        .card-icon svg {
-            width: 18px;
-            height: 18px;
-        }
-        .card-heart.active svg {
-            fill: var(--primary-red);
-        }
-        .product-info {
-            padding: 18px 20px 24px;
-        }
-        .product-name {
-            font-weight: 500;
-            font-size: 15px;
-            margin-bottom: 8px;
-            height: 42px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        .product-price {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 18px;
-            font-weight: 600;
-        }
-        .current-price {
-            color: #000;
-        }
-        .old-price {
-            color: #999;
-            text-decoration: line-through;
-            font-weight: 400;
-        }
-        .add-to-cart {
-            position: absolute;
-            bottom: 0;
+            top: 100%;
             left: 0;
             right: 0;
-            background: #000;
-            color: white;
-            text-align: center;
-            padding: 14px;
-            font-weight: 600;
-            font-size: 14px;
-            opacity: 0;
-            transform: translateY(100%);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        .product-card:hover .add-to-cart {
-            opacity: 1;
-            transform: translateY(0);
+
+        .mobile-nav.active {
+            display: block;
         }
-        /* Modal */
-        .modal {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.7);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            animation: fadeIn 0.3s;
+
+        .mobile-nav a {
+            display: block;
+            padding: 15px 0;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            border-bottom: 1px solid #eee;
         }
-        .modal-content {
+
+        /* Mobile Search */
+        .mobile-search {
+            padding: 12px 16px;
             background: white;
-            max-width: 920px;
-            width: 92%;
+        }
+
+        .mobile-search input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 14px;
+            background: #f5f5f5;
+        }
+
+        /* Mobile Categories - Horizontal Scroll */
+        .mobile-categories {
+            padding: 16px;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            background: white;
+            margin: 8px 0;
+        }
+
+        .mobile-categories span {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            background: #f0f0f0;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .mobile-categories span:active {
+            background: #DB4444;
+            color: white;
+        }
+
+        /* Mobile Hero */
+        .mobile-hero {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 8px 16px;
+            border-radius: 15px;
+            padding: 25px 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mobile-hero h2 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .mobile-hero h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .mobile-hero button {
+            background: white;
+            color: #000;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+        }
+
+        /* Section Headers */
+        .mobile-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+        }
+
+        .mobile-section-header h3 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .mobile-section-header .red-bar {
+            width: 20px;
+            height: 40px;
+            background: #DB4444;
+            border-radius: 4px;
+            margin-right: 12px;
+        }
+
+        .timer-small {
+            display: flex;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Horizontal Product Scroll */
+        .product-scroll {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            padding: 0 16px 20px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .product-card {
+            min-width: 160px;
+            background: white;
             border-radius: 12px;
             overflow: hidden;
-            display: flex;
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        .modal-image {
-            flex: 1;
+
+        .product-image {
+            height: 160px;
             background: #f8f8f8;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 40px;
+            position: relative;
         }
-        .modal-image img {
-            max-width: 100%;
-            max-height: 420px;
-            object-fit: contain;
+
+        .product-image img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
         }
-        .modal-details {
-            flex: 1;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-        }
-        .modal-close {
+
+        .discount-badge {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            background: white;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            top: 8px;
+            left: 8px;
+            background: #DB4444;
+            color: white;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 4px;
         }
-        .modal-details h2 {
-            font-size: 26px;
-            margin-bottom: 12px;
+
+        .product-info {
+            padding: 12px;
         }
-        .modal-price {
-            font-size: 26px;
+
+        .product-info h4 {
+            font-size: 14px;
+            margin-bottom: 6px;
+            white-space: normal;
+            line-height: 1.3;
+        }
+
+        .price {
             font-weight: 700;
-            margin: 16px 0;
+            font-size: 16px;
         }
-        .modal-old-price {
-            font-size: 18px;
+
+        .old-price {
+            font-size: 13px;
             color: #999;
             text-decoration: line-through;
+            margin-left: 8px;
         }
-        .modal-desc {
-            margin: 24px 0;
-            color: #555;
-            line-height: 1.7;
+
+        .add-btn {
+            width: 100%;
+            background: #000;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 8px;
+            border-radius: 6px;
         }
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .main-container {
-                padding: 0 20px;
+
+        /* Grid Products (2 columns) */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding: 0 16px;
+        }
+
+        /* Mobile Banner */
+        .mobile-banner {
+            background: #000;
+            margin: 20px 16px;
+            border-radius: 15px;
+            padding: 25px 20px;
+            color: white;
+        }
+
+        .banner-tag {
+            color: #22c55e;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .banner-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .banner-circles {
+            display: flex;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+        }
+
+        .circle .number {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .circle .label {
+            font-size: 9px;
+        }
+
+        .banner-btn {
+            background: #22c55e;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        /* New Arrivals Mobile */
+        .new-arrivals {
+            padding: 0 16px;
+        }
+
+        .featured-card {
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .featured-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .featured-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+        }
+
+        .featured-content h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .featured-content p {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .featured-content a {
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .double-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .small-card {
+            background: #000;
+            border-radius: 12px;
+            padding: 20px 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .small-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 8px;
+        }
+
+        .small-card h4 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .small-card p {
+            font-size: 11px;
+            color: #aaa;
+            margin-bottom: 8px;
+        }
+
+        .small-card a {
+            color: white;
+            font-size: 12px;
+        }
+
+        /* Mobile Footer */
+        .mobile-footer {
+            background: #000;
+            color: white;
+            padding: 30px 16px 20px;
+            margin-top: 30px;
+        }
+
+        .footer-section {
+            margin-bottom: 25px;
+        }
+
+        .footer-section h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .footer-section p, .footer-section li {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.8;
+            list-style: none;
+        }
+
+        .newsletter-input {
+            display: flex;
+            border: 1px solid #555;
+            border-radius: 4px;
+            overflow: hidden;
+            max-width: 280px;
+        }
+
+        .newsletter-input input {
+            flex: 1;
+            padding: 12px;
+            background: transparent;
+            border: none;
+            color: white;
+        }
+
+        .newsletter-input button {
+            padding: 0 20px;
+            background: white;
+            color: black;
+            border: none;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .trust-icon {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 50%;
+        }
+
+        .app-download {
+            display: flex;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .qr-code {
+            width: 60px;
+            height: 60px;
+            background: white;
+            padding: 5px;
+        }
+
+        .store-badges img {
+            height: 25px;
+            margin-bottom: 8px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* Tablet Styles (768px and up) */
+        @media (min-width: 768px) {
+            .mobile-header {
+                padding: 15px 30px;
             }
-            .sidebar {
-                display: none;
+            
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .mobile-hero {
+                height: 300px;
+            }
+            
+            .hero-image {
+                width: 250px;
+                height: 250px;
             }
         }
-        @media (max-width: 768px) {
-            .header-content {
-                padding: 0 20px;
+
+        /* Desktop Styles (1024px and up) */
+        @media (min-width: 1024px) {
+            .mobile-header {
+                max-width: 1200px;
+                margin: 0 auto;
             }
-            .nav-links {
-                display: none;
+            
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
             }
-            .search-container {
-                width: 220px;
-            }
-            .hero-section {
-                height: 340px;
-            }
-            .slide-content h1 {
-                font-size: 32px;
-            }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="header-content">
-            <!-- Logo -->
-            <a href="#" class="logo">Exclusive</a>
-            <!-- Navigation -->
-            <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Sign Up</a></li>
-            </ul>
-            <!-- Right side -->
-            <div class="header-right">
-                <div class="search-container">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 01-14 0 7 7 0 0114 0z" />
-                    </svg>
-                    <input type="text" id="search-input" placeholder="What are you looking for?">
-                </div>
-                <button class="icon-btn" id="wishlist-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
-                    </svg>
-                </button>
-                <button class="icon-btn cart-icon" id="cart-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 19a2 2 0 11-4 0 2 2 0 014 0zM19 19a2 2 0 11-4 0 2 2 0 014 0zM3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <span class="cart-count" id="cart-count">0</span>
-                </button>
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="mobile-logo">Exclusive</div>
+        <div class="mobile-icons">
+            <button onclick="toggleSearch()">🔍</button>
+            <button>❤️</button>
+            <button onclick="showCart()">
+                🛒
+                <span class="cart-badge" id="cartCount">0</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#">Home</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+        <a href="#">Sign Up</a>
+    </div>
+
+    <!-- Mobile Search (hidden by default) -->
+    <div class="mobile-search" id="mobileSearch" style="display: none;">
+        <input type="text" placeholder="Search products...">
+    </div>
+
+    <!-- Mobile Categories -->
+    <div class="mobile-categories">
+        <span>👕 Clothing</span>
+        <span>🩴 Slippers</span>
+        <span>👔 Men's</span>
+        <span>👗 Women's</span>
+        <span>📱 Accessories</span>
+        <span>⌚ Watches</span>
+        <span>🎧 Audio</span>
+    </div>
+
+    <!-- Mobile Hero -->
+    <div class="mobile-hero">
+        <h2>Summer Sale</h2>
+        <h1>Up to 40% Off</h1>
+        <button>Shop Now →</button>
+        <div class="hero-image"></div>
+    </div>
+
+    <!-- Flash Sales Section -->
+    <div class="mobile-section-header">
+        <div style="display: flex; align-items: center;">
+            <div class="red-bar"></div>
+            <h3>Flash Sale</h3>
+        </div>
+        <div class="timer-small">
+            <span>03</span>:<span>23</span>:<span>19</span>:<span>56</span>
+        </div>
+    </div>
+
+    <!-- Horizontal Scroll Products -->
+    <div class="product-scroll" id="flashProducts"></div>
+
+    <!-- Best Sellers Section -->
+    <div class="mobile-section-header">
+        <div style="display: flex; align-items: center;">
+            <div class="red-bar"></div>
+            <h3>Best Sellers</h3>
+        </div>
+        <button style="background: #DB4444; color: white; border: none; padding: 8px 20px; border-radius: 4px;">View All</button>
+    </div>
+
+    <!-- Grid Products (2 columns) -->
+    <div class="product-grid" id="bestSellers"></div>
+
+    <!-- JBL Banner -->
+    <div class="mobile-banner">
+        <div class="banner-tag">Categories</div>
+        <div class="banner-title">Enhance Your<br>Music Experience</div>
+        
+        <div class="banner-circles">
+            <div class="circle"><span class="number">23</span><span class="label">Hours</span></div>
+            <div class="circle"><span class="number">05</span><span class="label">Days</span></div>
+            <div class="circle"><span class="number">59</span><span class="label">Mins</span></div>
+            <div class="circle"><span class="number">35</span><span class="label">Secs</span></div>
+        </div>
+        
+        <button class="banner-btn">Buy Now!</button>
+    </div>
+
+    <!-- New Arrivals -->
+    <div class="mobile-section-header">
+        <div style="display: flex; align-items: center;">
+            <div class="red-bar"></div>
+            <h3>New Arrivals</h3>
+        </div>
+    </div>
+
+    <div class="new-arrivals">
+        <!-- PS5 Featured Card -->
+        <div class="featured-card">
+            <img src="https://picsum.photos/id/1015/400/300" alt="PS5">
+            <div class="featured-content">
+                <h3>PlayStation 5</h3>
+                <p>Black and White version</p>
+                <a href="#">Shop Now →</a>
             </div>
         </div>
-    </header>
-    <div class="main-container">
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
+
+        <!-- Double Cards -->
+        <div class="double-card">
+            <div class="small-card">
+                <img src="https://picsum.photos/id/160/150/150" alt="Speakers">
+                <h4>Speakers</h4>
+                <p>Wireless</p>
+                <a href="#">Shop Now</a>
+            </div>
+            <div class="small-card">
+                <img src="https://picsum.photos/id/251/150/150" alt="Perfume">
+                <h4>Perfume</h4>
+                <p>GUCCI</p>
+                <a href="#">Shop Now</a>
+            </div>
+        </div>
+
+        <!-- Women's Collection -->
+        <div class="featured-card" style="height: 180px;">
+            <img src="https://picsum.photos/id/1005/400/200" alt="Women's Fashion">
+            <div class="featured-content">
+                <h3>Women's Collection</h3>
+                <p>Featured woman collections</p>
+                <a href="#">Shop Now →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Footer -->
+    <div class="mobile-footer">
+        <!-- Trust Badges -->
+        <div class="trust-badge">
+            <div class="trust-icon"></div>
+            <div>
+                <h4 style="font-size: 14px;">FREE DELIVERY</h4>
+                <p style="font-size: 12px;">For orders over $140</p>
+            </div>
+        </div>
+
+        <div class="trust-badge">
+            <div class="trust-icon"></div>
+            <div>
+                <h4 style="font-size: 14px;">24/7 SUPPORT</h4>
+                <p style="font-size: 12px;">Friendly customer support</p>
+            </div>
+        </div>
+
+        <div class="trust-badge">
+            <div class="trust-icon"></div>
+            <div>
+                <h4 style="font-size: 14px;">MONEY BACK</h4>
+                <p style="font-size: 12px;">30 days return</p>
+            </div>
+        </div>
+
+        <!-- Footer Sections -->
+        <div class="footer-section">
+            <h4>Exclusive</h4>
+            <p>Subscribe for 10% off</p>
+            <div class="newsletter-input">
+                <input type="email" placeholder="Email">
+                <button>→</button>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h4>Support</h4>
+            <p>111 Bijoy sarani, Dhaka</p>
+            <p>exclusive@gmail.com</p>
+            <p>+88015-88888-9999</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Account</h4>
             <ul>
-                <li>Woman’s Fashion</li>
-                <li>Men’s Fashion</li>
-                <li>Electronics</li>
-                <li>Home &amp; Lifestyle</li>
-                <li>Medicine</li>
-                <li>Sports &amp; Outdoor</li>
-                <li>Baby’s &amp; Toys</li>
-                <li>Groceries &amp; Pets</li>
-                <li>Health &amp; Beauty</li>
+                <li>My Account</li>
+                <li>Login / Register</li>
+                <li>Cart</li>
+                <li>Wishlist</li>
             </ul>
-        </aside>
-        <!-- MAIN CONTENT -->
-        <div style="flex: 1;">
-            <!-- HERO SLIDER -->
-            <section class="hero-section">
-                <div class="slider-container">
-                    <div class="slider-track" id="slider-track">
-                        <!-- Slide 1 - iPhone -->
-                        <div class="slide">
-                            <div class="slide-content">
-                                <span class="apple-logo"></span>
-                                <h2>iPhone 14 Series</h2>
-                                <h1>Up to 10%<br>off Voucher</h1>
-                                <a href="#" onclick="shopNowClick()" class="shop-btn">
-                                    Shop Now
-                                    <span style="font-size: 22px;">→</span>
-                                </a>
-                            </div>
-                            <img src="https://picsum.photos/id/1015/680/520" alt="iPhone 14 Series" class="slide-image">
-                        </div>
-                        <!-- Slide 2 - Headphones -->
-                        <div class="slide">
-                            <div class="slide-content">
-                                <span class="apple-logo" style="color:#ff9900;">🎧</span>
-                                <h2>Sony WH-1000XM5</h2>
-                                <h1>Premium Noise<br>Cancelling</h1>
-                                <a href="#" onclick="shopNowClick()" class="shop-btn">
-                                    Shop Now
-                                    <span style="font-size: 22px;">→</span>
-                                </a>
-                            </div>
-                            <img src="https://picsum.photos/id/160/680/520" alt="Headphones" class="slide-image">
-                        </div>
-                        <!-- Slide 3 - Smart Watch -->
-                        <div class="slide">
-                            <div class="slide-content">
-                                <span class="apple-logo">⌚</span>
-                                <h2>Apple Watch Ultra</h2>
-                                <h1>Up to 15% off</h1>
-                                <a href="#" onclick="shopNowClick()" class="shop-btn">
-                                    Shop Now
-                                    <span style="font-size: 22px;">→</span>
-                                </a>
-                            </div>
-                            <img src="https://picsum.photos/id/201/680/520" alt="Smart Watch" class="slide-image">
-                        </div>
-                    </div>
-                    <!-- Dots -->
-                    <div class="slider-dots" id="slider-dots">
-                        <div class="dot active" onclick="goToSlide(0)"></div>
-                        <div class="dot" onclick="goToSlide(1)"></div>
-                        <div class="dot" onclick="goToSlide(2)"></div>
-                    </div>
-                </div>
-            </section>
-            <!-- FLASH SALES -->
-            <section class="flash-sales">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
-                    <div class="section-header">
-                        <div class="red-bar"></div>
-                        <h2 class="section-title">Today's Flash Sales</h2>
-                    </div>
-                    <!-- Timer -->
-                    <div class="timer-container" id="timer-container">
-                        <div class="timer-box">
-                            <div class="timer-number" id="days">03</div>
-                            <div class="timer-label">Days</div>
-                        </div>
-                        <div style="font-size: 32px; font-weight: 300; color: #ddd; align-self: flex-end; margin-bottom: 6px;">:</div>
-                      
-                        <div class="timer-box">
-                            <div class="timer-number" id="hours">23</div>
-                            <div class="timer-label">Hours</div>
-                        </div>
-                        <div style="font-size: 32px; font-weight: 300; color: #ddd; align-self: flex-end; margin-bottom: 6px;">:</div>
-                      
-                        <div class="timer-box">
-                            <div class="timer-number" id="minutes">19</div>
-                            <div class="timer-label">Minutes</div>
-                        </div>
-                        <div style="font-size: 32px; font-weight: 300; color: #ddd; align-self: flex-end; margin-bottom: 6px;">:</div>
-                      
-                        <div class="timer-box">
-                            <div class="timer-number" id="seconds">56</div>
-                            <div class="timer-label">Seconds</div>
-                        </div>
-                    </div>
-                    <!-- Nav arrows -->
-                    <div class="flash-nav">
-                        <button onclick="scrollProducts('left')">
-                            ←
-                        </button>
-                        <button onclick="scrollProducts('right')">
-                            →
-                        </button>
-                    </div>
-                </div>
-                <!-- Products -->
-                <div class="products-scroll" id="products-scroll">
-                    <!-- Populated by JS -->
-                </div>
-            </section>
-            <!-- BEST SELLING PRODUCTS -->
-            <section style="margin-top: 60px; padding-bottom: 60px;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
-                    <div style="display: flex; align-items: center; gap: 16px;">
-                        <div class="red-bar"></div>
-                        <div style="color: var(--primary-red); font-weight: 600; font-size: 14px; letter-spacing: 1px;">THIS MONTH</div>
-                        <h2 class="section-title" style="margin: 0;">Best Selling Products</h2>
-                    </div>
-                    <button onclick="alert('All best selling products would load here')"
-                            style="background: var(--primary-red); color: white; border: none; padding: 12px 40px; border-radius: 4px; font-weight: 600; cursor: pointer;">
-                        View All
-                    </button>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px;">
-                   
-                    <!-- Card 1: The north coat -->
-                    <div class="product-card" style="min-width: auto;">
-                        <div class="product-image-container">
-                            <img src="https://picsum.photos/id/1016/320/260" alt="The north coat">
-                            <div class="card-icons">
-                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
-                                    </svg>
-                                </div>
-                                <div class="card-icon" onclick="alert('Quick view opened for The north coat'); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">The north coat</div>
-                            <div class="product-price">
-                                <span class="current-price">$260</span>
-                                <span class="old-price">$360</span>
-                            </div>
-                        </div>
-                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
-                            Add To Cart
-                        </div>
-                    </div>
-                    <!-- Card 2: Gucci duffle bag -->
-                    <div class="product-card" style="min-width: auto;">
-                        <div class="product-image-container">
-                            <img src="https://picsum.photos/id/160/320/260" alt="Gucci duffle bag">
-                            <div class="card-icons">
-                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
-                                    </svg>
-                                </div>
-                                <div class="card-icon" onclick="alert('Quick view opened for Gucci duffle bag'); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Gucci duffle bag</div>
-                            <div class="product-price">
-                                <span class="current-price">$960</span>
-                                <span class="old-price">$1160</span>
-                            </div>
-                        </div>
-                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
-                            Add To Cart
-                        </div>
-                    </div>
-                    <!-- Card 3: RGB liquid CPU Cooler -->
-                    <div class="product-card" style="min-width: auto;">
-                        <div class="product-image-container">
-                            <img src="https://picsum.photos/id/201/320/260" alt="RGB liquid CPU Cooler">
-                            <div class="card-icons">
-                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
-                                    </svg>
-                                </div>
-                                <div class="card-icon" onclick="alert('Quick view opened for RGB liquid CPU Cooler'); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">RGB liquid CPU Cooler</div>
-                            <div class="product-price">
-                                <span class="current-price">$160</span>
-                                <span class="old-price">$170</span>
-                            </div>
-                        </div>
-                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
-                            Add To Cart
-                        </div>
-                    </div>
-                    <!-- Card 4: Small BookShelf -->
-                    <div class="product-card" style="min-width: auto;">
-                        <div class="product-image-container">
-                            <img src="https://picsum.photos/id/251/320/260" alt="Small BookShelf">
-                            <div class="card-icons">
-                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
-                                    </svg>
-                                </div>
-                                <div class="card-icon" onclick="alert('Quick view opened for Small BookShelf'); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Small BookShelf</div>
-                            <div class="product-price">
-                                <span class="current-price">$360</span>
-                            </div>
-                        </div>
-                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
-                            Add To Cart
-                        </div>
-                    </div>
-                </div>
-            </section>
+        </div>
 
-            <!-- JBL ADVERTISEMENT BANNER -->
-            <section style="margin-top: 60px; padding-bottom: 60px;">
-                <div style="background: #000; border-radius: 8px; overflow: hidden; display: flex; align-items: center; padding: 70px 80px; color: white;">
-                    <!-- Left Content -->
-                    <div style="flex: 1; z-index: 2;">
-                        <div style="color: #22c55e; font-weight: 600; font-size: 16px; margin-bottom: 12px;">Categories</div>
-                        <h2 style="font-size: 48px; font-weight: 700; line-height: 1.1; margin-bottom: 40px;">Enhance Your<br>Music Experience</h2>
-                        
-                        <!-- Countdown Circles -->
-                        <div style="display: flex; gap: 24px; margin-bottom: 48px;">
-                            <div style="text-align: center;">
-                                <div style="background: #fff; color: #000; width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700;">23</div>
-                                <div style="margin-top: 8px; font-size: 13px; font-weight: 500; color: #bbb;">Hours</div>
-                            </div>
-                            <div style="text-align: center;">
-                                <div style="background: #fff; color: #000; width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700;">05</div>
-                                <div style="margin-top: 8px; font-size: 13px; font-weight: 500; color: #bbb;">Days</div>
-                            </div>
-                            <div style="text-align: center;">
-                                <div style="background: #fff; color: #000; width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700;">59</div>
-                                <div style="margin-top: 8px; font-size: 13px; font-weight: 500; color: #bbb;">Minutes</div>
-                            </div>
-                            <div style="text-align: center;">
-                                <div style="background: #fff; color: #000; width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700;">35</div>
-                                <div style="margin-top: 8px; font-size: 13px; font-weight: 500; color: #bbb;">Seconds</div>
-                            </div>
-                        </div>
-                        
-                        <button onclick="alert('JBL Speaker added to cart!');" 
-                                style="background: #22c55e; color: white; border: none; padding: 16px 52px; font-size: 17px; font-weight: 700; border-radius: 6px; cursor: pointer;">
-                            Buy Now!
-                        </button>
-                    </div>
-                    
-                    <!-- Right - JBL Speaker Image -->
-                    <div style="flex: 1; text-align: right;">
-                        <img src="https://picsum.photos/id/160/620/440" 
-                             alt="JBL Portable Speaker" 
-                             style="max-height: 440px; filter: drop-shadow(40px 30px 60px rgba(0, 100, 255, 0.4));">
-                    </div>
+        <!-- Download App -->
+        <div class="footer-section">
+            <h4>Download App</h4>
+            <p style="font-size: 12px; color: #999;">Save $3 with App</p>
+            <div class="app-download">
+                <div class="qr-code">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" style="width: 100%;">
                 </div>
-            </section>
+                <div class="store-badges">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store">
+                </div>
+            </div>
+            <div class="social-icons">
+                <span>f</span>
+                <span>𝕏</span>
+                <span>📷</span>
+                <span>in</span>
+            </div>
+        </div>
 
-            <!-- EXPLORE OUR PRODUCTS -->
-            <section style="margin-top: 60px; padding-bottom: 60px;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
-                    <div style="display: flex; align-items: center; gap: 16px;">
-                        <div class="red-bar"></div>
-                        <div style="color: var(--primary-red); font-weight: 600; font-size: 14px; letter-spacing: 1px;">OUR PRODUCTS</div>
-                    </div>
-                    <div style="display: flex; gap: 12px;">
-                        <button style="width: 46px; height: 46px; border-radius: 50%; background: #f5f5f5; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;">←</button>
-                        <button style="width: 46px; height: 46px; border-radius: 50%; background: #f5f5f5; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;">→</button>
-                    </div>
-                </div>
-                <h2 class="section-title" style="margin-bottom: 24px;">Explore Our Products</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px;">
-                    <!-- Card 1: Bread Dry Dog Food -->
-                    <div class="product-card" style="min-width: auto;">
-                        <div class="product-image-container">
-                            <img src="https://picsum.photos/id/30/320/260" alt="Bread Dry Dog Food">
-                            <div class="card-icons">
-                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
-                                    </svg>
-                                </div>
-                                <div class="card-icon" onclick="alert('Quick view opened for Bread Dry Dog Food'); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Bread Dry Dog Food</div>
-                            <div class="product-price">
-                                <span class="current-price">$20</span>
-                            </div>
-                        </div>
-                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
-                            Add To Cart
-                        </div>
-                    </div>
-                    <!-- Card 2: CANON EOS DSLR Camera -->
-                    <div class="product-card" style="min-width: auto;">
-                        <div class="product-image-container">
-                            <img src="https://picsum.photos/id/201/320/260" alt="CANON EOS DSLR Camera">
-                            <div class="card-icons">
-                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
-                                    </svg>
-                                </div>
-                                <div class="card-icon" onclick="alert('Quick view opened for CANON EOS DSLR Camera'); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">CANON EOS DSLR Camera</div>
-                            <div class="product-price">
-                                <span class="current-price">$650</span>
-                            </div>
-                        </div>
-                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
-                            Add To Cart
-                        </div>
-                    </div>
-                    <!-- Card 3: ASUS FHD Gaming Laptop -->
-                    <div class="product-card" style="min-width: auto;">
-                        <div class="product-image-container">
-                            <img src="https://picsum.photos/id/160/320/260" alt="ASUS FHD Gaming Laptop">
-                            <div class="card-icons">
-                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
-                                    </svg>
-                                </div>
-                                <div class="card-icon" onclick="alert('Quick view opened for ASUS FHD Gaming Laptop'); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">ASUS FHD Gaming Laptop</div>
-                            <div class="product-price">
-                                <span class="current-price">$899</span>
-                            </div>
-                        </div>
-                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
-                            Add To Cart
-                        </div>
-                    </div>
-                    <!-- Card 4: Curology Product Set -->
-                    <div class="product-card" style="min-width: auto;">
-                        <div class="product-image-container">
-                            <img src="https://picsum.photos/id/251/320/260" alt="Curology Product Set">
-                            <div class="card-icons">
-                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
-                                    </svg>
-                                </div>
-                                <div class="card-icon" onclick="alert('Quick view opened for Curology Product Set'); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Curology Product Set</div>
-                            <div class="product-price">
-                                <span class="current-price">$45</span>
-                            </div>
-                        </div>
-                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
-                            Add To Cart
-                        </div>
-                    </div>
-                    <!-- Card 5: Kids Electric Car -->
-                    <div class="product-card" style="min-width: auto;">
-                        <div class="product-image-container">
-                            <img src="https://picsum.photos/id/29/320/260" alt="Kids Electric Car">
-                            <div class="card-icons">
-                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
-                                    </svg>
-                                </div>
-                                <div class="card-icon" onclick="alert('Quick view opened for Kids Electric Car'); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Kids Electric Car</div>
-                            <div class="product-price">
-                                <span class="current-price">$299</span>
-                            </div>
-                        </div>
-                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
-                            Add To Cart
-                        </div>
-                    </div>
-                    <!-- Card 6: Jr. Zoom Soccer Cleats -->
-                    <div class="product-card" style="min-width: auto;">
-                        <div class="product-image-container">
-                            <img src="https://picsum.photos/id/1016/320/260" alt="Jr. Zoom Soccer Cleats">
-                            <div class="card-icons">
-                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
-                                    </svg>
-                                </div>
-                                <div class="card-icon" onclick="alert('Quick view opened for Jr. Zoom Soccer Cleats'); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Jr. Zoom Soccer Cleats</div>
-                            <div class="product-price">
-                                <span class="current-price">$79</span>
-                            </div>
-                        </div>
-                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
-                            Add To Cart
-                        </div>
-                    </div>
-                    <!-- Card 7: GP11 Shooter USB Gamepad -->
-                    <div class="product-card" style="min-width: auto;">
-                        <div class="product-image-container">
-                            <img src="https://picsum.photos/id/1015/320/260" alt="GP11 Shooter USB Gamepad">
-                            <div class="card-icons">
-                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
-                                    </svg>
-                                </div>
-                                <div class="card-icon" onclick="alert('Quick view opened for GP11 Shooter USB Gamepad'); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">GP11 Shooter USB Gamepad</div>
-                            <div class="product-price">
-                                <span class="current-price">$49</span>
-                            </div>
-                        </div>
-                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
-                            Add To Cart
-                        </div>
-                    </div>
-                    <!-- Card 8: Quilted Satin Jacket -->
-                    <div class="product-card" style="min-width: auto;">
-                        <div class="product-image-container">
-                            <img src="https://picsum.photos/id/160/320/260" alt="Quilted Satin Jacket">
-                            <div class="card-icons">
-                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
-                                    </svg>
-                                </div>
-                                <div class="card-icon" onclick="alert('Quick view opened for Quilted Satin Jacket'); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Quilted Satin Jacket</div>
-                            <div class="product-price">
-                                <span class="current-price">$129</span>
-                            </div>
-                        </div>
-                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
-                            Add To Cart
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- NEW ARRIVALS SECTION -->
-            <section style="margin-top: 80px; padding-bottom: 100px;">
-                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
-                    <div class="red-bar"></div>
-                    <span style="color: var(--primary-red); font-weight: 600; font-size: 14px; letter-spacing: 1px;">FEATURED</span>
-                </div>
-                
-                <h2 class="section-title" style="margin-bottom: 32px;">New Arrival</h2>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-                    
-                    <!-- PS5 Large Card -->
-                    <div style="background: #000; border-radius: 8px; overflow: hidden; position: relative; height: 500px;">
-                        <img src="https://picsum.photos/id/1015/700/520" alt="PS5" style="position: absolute; left: 50%; top: 55%; transform: translate(-50%, -50%); height: 88%; z-index: 1;">
-                        <div style="position: absolute; bottom: 48px; left: 40px; color: white; z-index: 2;">
-                            <h3 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">PlayStation 5</h3>
-                            <p style="max-width: 260px; line-height: 1.4; margin-bottom: 20px;">Black and White version of the PS5<br>coming out on sale.</p>
-                            <a href="#" onclick="shopNowClick(); event.preventDefault()" style="color: white; font-weight: 600; text-decoration: none; border-bottom: 2px solid white; padding-bottom: 4px;">Shop Now</a>
-                        </div>
-                        <!-- Controller -->
-                        <img src="https://picsum.photos/id/201/260/140" alt="Controller" style="position: absolute; bottom: 85px; left: 85px; height: 135px; transform: rotate(-14deg); z-index: 3; box-shadow: 20px 20px 30px rgba(0,0,0,0.6);">
-                    </div>
-                    
-                    <!-- Right side -->
-                    <div style="display: flex; flex-direction: column; gap: 24px;">
-                        
-                        <!-- Women's Collections -->
-                        <div style="background: #000; border-radius: 8px; overflow: hidden; height: 240px; position: relative;">
-                            <img src="https://picsum.photos/id/1005/600/300" alt="Woman" style="width: 100%; height: 100%; object-fit: cover;">
-                            <div style="position: absolute; top: 45px; left: 40px; color: white;">
-                                <h3 style="font-size: 26px; font-weight: 600;">Women's Collections</h3>
-                                <p style="margin: 12px 0 22px; max-width: 240px;">Featured woman collections that<br>give you another vibe.</p>
-                                <a href="#" style="color: white; font-weight: 600; border-bottom: 2px solid white; padding-bottom: 4px;">Shop Now</a>
-                            </div>
-                        </div>
-                        
-                        <!-- Speakers + Perfume -->
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; flex: 1;">
-                            
-                            <!-- Speakers -->
-                            <div style="background: #000; border-radius: 8px; overflow: hidden; position: relative; padding: 30px 20px; text-align: center;">
-                                <img src="https://picsum.photos/id/160/240/180" alt="Speakers" style="margin-bottom: 16px;">
-                                <h4 style="color: white; font-size: 22px; margin-bottom: 4px;">Speakers</h4>
-                                <p style="color: #aaa; font-size: 14px;">Amazon wireless speakers</p>
-                                <a href="#" style="color: white; font-weight: 600; margin-top: 20px; display: inline-block; border-bottom: 2px solid white; padding-bottom: 3px;">Shop Now</a>
-                            </div>
-                            
-                            <!-- Perfume -->
-                            <div style="background: #000; border-radius: 8px; overflow: hidden; position: relative; padding: 30px 20px; text-align: center;">
-                                <img src="https://picsum.photos/id/251/160/220" alt="Gucci Perfume" style="margin-bottom: 12px; transform: rotate(6deg);">
-                                <h4 style="color: white; font-size: 22px; margin-bottom: 4px;">Perfume</h4>
-                                <p style="color: #aaa; font-size: 14px;">GUCCI INTENSE OUD EDP</p>
-                                <a href="#" style="color: white; font-weight: 600; margin-top: 20px; display: inline-block; border-bottom: 2px solid white; padding-bottom: 3px;">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div class="copyright">
+            © Copyright Exclusive 2024
         </div>
     </div>
 
-    <!-- FOOTER - LAST SECTION -->
-    <footer>
-        <!-- Trust Bar -->
-        <div style="background: #FAFAFA; padding: 50px 0; border-bottom: 1px solid #eee;">
-            <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center;">
-                
-                <!-- Free Delivery -->
-                <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 60px; height: 60px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 3h18l-2 12H7L3 3z"/>
-                            <path d="M16 21a2 2 0 11-4 0 2 2 0 014 0z"/>
-                            <path d="M9 21a2 2 0 11-4 0 2 2 0 014 0z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">FREE AND FAST DELIVERY</h4>
-                        <p style="font-size: 13px; color: #666;">Free delivery for all orders over $140</p>
-                    </div>
-                </div>
-
-                <!-- 24/7 Customer Service -->
-                <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 60px; height: 60px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">24/7 CUSTOMER SERVICE</h4>
-                        <p style="font-size: 13px; color: #666;">Friendly 24/7 customer support</p>
-                    </div>
-                </div>
-
-                <!-- Money Back Guarantee -->
-                <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 60px; height: 60px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">MONEY BACK GUARANTEE</h4>
-                        <p style="font-size: 13px; color: #666;">We return money within 30 days</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Main Footer -->
-        <div style="background: #000; color: #fff; padding: 80px 0 40px;">
-            <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr; gap: 40px;">
-                
-                <!-- Exclusive -->
-                <div>
-                    <h3 style="font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 24px;">Exclusive</h3>
-                    <div style="margin-bottom: 16px; font-weight: 600;">Subscribe</div>
-                    <p style="color: #999; margin-bottom: 20px; line-height: 1.5;">Get 10% off your first order</p>
-                    <div style="display: flex; border: 1px solid #555; border-radius: 4px; overflow: hidden; max-width: 240px;">
-                        <input type="email" placeholder="Enter your email" 
-                               style="flex: 1; background: transparent; border: none; padding: 14px 16px; color: #fff; font-size: 14px; outline: none;">
-                        <button style="background: #fff; color: #000; border: none; padding: 0 20px; font-size: 18px; cursor: pointer;">→</button>
-                    </div>
-                </div>
-
-                <!-- Support -->
-                <div>
-                    <h4 style="font-weight: 600; margin-bottom: 24px;">Support</h4>
-                    <p style="color: #999; margin-bottom: 12px; line-height: 1.6;">
-                        III Bijoy sarani, Dhaka,<br>
-                        DH 1515, Bangladesh.
-                    </p>
-                    <p style="color: #999; margin-bottom: 8px;">exclusive@gmail.com</p>
-                    <p style="color: #999;">+88015-88888-9999</p>
-                </div>
-
-                <!-- Account -->
-                <div>
-                    <h4 style="font-weight: 600; margin-bottom: 24px;">Account</h4>
-                    <ul style="list-style: none; color: #999; line-height: 2.2;">
-                        <li>My Account</li>
-                        <li>Login / Register</li>
-                        <li>Cart</li>
-                        <li>Wishlist</li>
-                        <li>Shop</li>
-                    </ul>
-                </div>
-
-                <!-- Quick Link -->
-                <div>
-                    <h4 style="font-weight: 600; margin-bottom: 24px;">Quick Link</h4>
-                    <ul style="list-style: none; color: #999; line-height: 2.2;">
-                        <li>Privacy Policy</li>
-                        <li>Terms Of Use</li>
-                        <li>FAQ</li>
-                        <li>Contact</li>
-                    </ul>
-                </div>
-
-                <!-- Download App -->
-                <div>
-                    <h4 style="font-weight: 600; margin-bottom: 24px;">Download App</h4>
-                    <p style="color: #999; font-size: 13px; margin-bottom: 12px;">Save $3 with App New User Only</p>
-                    
-                    <!-- QR & Stores -->
-                    <div style="display: flex; gap: 12px; margin-bottom: 24px;">
-                        <!-- QR Code -->
-                        <div style="width: 80px; height: 80px; background: white; padding: 6px;">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/800px-QR_code_for_mobile_English_Wikipedia.svg.png" 
-                                 alt="QR Code" style="width: 100%; height: 100%; object-fit: contain;">
-                        </div>
-                        
-                        <!-- App Stores -->
-                        <div style="display: flex; flex-direction: column; gap: 8px;">
-                            <a href="#" style="background: #000; border: 1px solid #fff; border-radius: 6px; padding: 6px 12px; display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" 
-                                     alt="Google Play" style="height: 22px;">
-                            </a>
-                            <a href="#" style="background: #000; border: 1px solid #fff; border-radius: 6px; padding: 6px 12px; display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/512px-Download_on_the_App_Store_Badge.svg.png" 
-                                     alt="App Store" style="height: 22px;">
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Social Icons -->
-                    <div style="display: flex; gap: 20px;">
-                        <a href="#" style="color: #fff; font-size: 22px;">f</a>
-                        <a href="#" style="color: #fff; font-size: 22px;">𝕏</a>
-                        <a href="#" style="color: #fff; font-size: 22px;">📷</a>
-                        <a href="#" style="color: #fff; font-size: 22px;">in</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Copyright -->
-            <div style="margin-top: 80px; padding-top: 24px; border-top: 1px solid #222; text-align: center; color: #666; font-size: 13px;">
-                © Copyright Rimel 2022. All right reserved
-            </div>
-        </div>
-    </footer>
-
-    <!-- QUICK VIEW MODAL -->
-    <div class="modal" id="quick-modal">
-        <div class="modal-content" onclick="event.stopImmediatePropagation()">
-            <button class="modal-close" onclick="closeModal()">✕</button>
-          
-            <div class="modal-image" id="modal-image">
-                <!-- JS inserted -->
-            </div>
-          
-            <div class="modal-details">
-                <h2 id="modal-name"></h2>
-                <div class="modal-price" id="modal-price"></div>
-                <div class="modal-old-price" id="modal-old-price"></div>
-              
-                <p class="modal-desc" id="modal-desc">
-                    Premium quality product with excellent performance and durability.
-                    Perfect for everyday use and professional needs.
-                </p>
-              
-                <div style="margin-top: auto;">
-                    <button onclick="addCurrentToCart()"
-                            style="width: 100%; background: #000; color: white; border: none; padding: 16px; font-size: 16px; font-weight: 600; border-radius: 6px; cursor: pointer;">
-                        Add to Cart
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
     <script>
-        // Product data
-        let products = [
-            {
-                id: 1,
-                name: "HAVIT HV-G92 Gamepad",
-                price: 120,
-                oldPrice: 160,
-                discount: 40,
-                img: "https://picsum.photos/id/1015/320/260"
-            },
-            {
-                id: 2,
-                name: "AK-900 Wired Keyboard",
-                price: 89,
-                oldPrice: 120,
-                discount: 35,
-                img: "https://picsum.photos/id/160/320/260"
-            },
-            {
-                id: 3,
-                name: "IPS LCD Gaming Monitor",
-                price: 299,
-                oldPrice: 399,
-                discount: 30,
-                img: "https://picsum.photos/id/201/320/260"
-            },
-            {
-                id: 4,
-                name: "S-Series Comfort Chair",
-                price: 149,
-                oldPrice: 199,
-                discount: 25,
-                img: "https://picsum.photos/id/251/320/260"
-            },
-            {
-                id: 5,
-                name: "Logitech G Pro X Mouse",
-                price: 79,
-                oldPrice: 109,
-                discount: 28,
-                img: "https://picsum.photos/id/29/320/260"
-            }
-        ]
-        let cartCount = 0
-        let currentModalProduct = null
-        // Render products
-        function renderProducts() {
-            const container = document.getElementById('products-scroll')
-            container.innerHTML = ''
-            products.forEach(product => {
-                const discount = product.discount
-                const cardHTML = `
-                    <div class="product-card" data-id="${product.id}">
-                        <div class="product-image-container">
-                            <img src="${product.img}" alt="${product.name}">
-                            <div class="discount-badge">-${discount}%</div>
-                          
-                            <div class="card-icons">
-                                <!-- Wishlist -->
-                                <div class="card-icon card-heart" onclick="toggleWishlist(this, ${product.id}); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
-                                    </svg>
-                                </div>
-                                <!-- Quick view -->
-                                <div class="card-icon" onclick="showQuickView(${product.id}); event.stopImmediatePropagation()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
-                                    </svg>
-                                </div>
-                            </div>
+        // Product Data
+        const products = [
+            { id: 1, name: "Cotton T-Shirt", price: 24.99, oldPrice: 34.99, discount: 28, img: "https://picsum.photos/id/1015/200/200" },
+            { id: 2, name: "Memory Foam Slides", price: 29.99, oldPrice: 39.99, discount: 25, img: "https://picsum.photos/id/160/200/200" },
+            { id: 3, name: "Leather Jacket", price: 89.99, oldPrice: 129.99, discount: 30, img: "https://picsum.photos/id/201/200/200" },
+            { id: 4, name: "Summer Dress", price: 59.99, oldPrice: 79.99, discount: 25, img: "https://picsum.photos/id/251/200/200" },
+            { id: 5, name: "Phone Case", price: 19.99, oldPrice: 29.99, discount: 33, img: "https://picsum.photos/id/29/200/200" },
+            { id: 6, name: "Smart Watch", price: 199.99, oldPrice: 249.99, discount: 20, img: "https://picsum.photos/id/30/200/200" }
+        ];
+
+        let cartCount = 0;
+
+        // Render Flash Sale Products (horizontal)
+        function renderFlashProducts() {
+            const container = document.getElementById('flashProducts');
+            container.innerHTML = '';
+            
+            products.slice(0, 5).forEach(p => {
+                container.innerHTML += `
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="${p.img}" alt="${p.name}">
+                            <span class="discount-badge">-${p.discount}%</span>
                         </div>
-                      
                         <div class="product-info">
-                            <div class="product-name">${product.name}</div>
-                            <div class="product-price">
-                                <span class="current-price">$${product.price}</span>
-                                <span class="old-price">$${product.oldPrice}</span>
+                            <h4>${p.name}</h4>
+                            <div>
+                                <span class="price">$${p.price}</span>
+                                <span class="old-price">$${p.oldPrice}</span>
                             </div>
-                        </div>
-                      
-                        <div onclick="addToCart(${product.id}); event.stopImmediatePropagation()"
-                             class="add-to-cart">
-                            Add To Cart
+                            <button class="add-btn" onclick="addToCart(${p.id})">Add to Cart</button>
                         </div>
                     </div>
-                `
-                container.innerHTML += cardHTML
-            })
+                `;
+            });
         }
-        // Add to cart
+
+        // Render Best Sellers (grid)
+        function renderBestSellers() {
+            const container = document.getElementById('bestSellers');
+            container.innerHTML = '';
+            
+            products.slice(2, 8).forEach(p => {
+                container.innerHTML += `
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="${p.img}" alt="${p.name}">
+                            <span class="discount-badge">-${p.discount}%</span>
+                        </div>
+                        <div class="product-info">
+                            <h4>${p.name}</h4>
+                            <div>
+                                <span class="price">$${p.price}</span>
+                                <span class="old-price">$${p.oldPrice}</span>
+                            </div>
+                            <button class="add-btn" onclick="addToCart(${p.id})">Add to Cart</button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Cart Functions
         function addToCart(id) {
-            cartCount++
-            document.getElementById('cart-count').textContent = cartCount
-          
-            // Animation feedback
-            const btns = document.querySelectorAll('.add-to-cart')
-            for (let btn of btns) {
-                if (btn.parentElement.getAttribute('data-id') == id) {
-                    const originalText = btn.textContent
-                    btn.style.transition = 'none'
-                    btn.textContent = '✓ Added!'
-                    btn.style.background = '#22c55e'
-                  
-                    setTimeout(() => {
-                        btn.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)'
-                        btn.textContent = originalText
-                        btn.style.background = '#000'
-                    }, 1300)
-                    break
-                }
-            }
-        }
-        // NEW HELPER FOR BEST SELLING + EXPLORE CARDS
-        function addToCartFromBest(el) {
-            cartCount++
-            document.getElementById('cart-count').textContent = cartCount
-          
-            const originalText = el.textContent
-            el.style.transition = 'none'
-            el.textContent = '✓ Added!'
-            el.style.background = '#22c55e'
-          
+            cartCount++;
+            document.getElementById('cartCount').textContent = cartCount;
+            
+            // Quick feedback
+            const btn = event.target;
+            const originalText = btn.textContent;
+            btn.textContent = '✓ Added';
+            btn.style.background = '#22c55e';
+            
             setTimeout(() => {
-                el.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)'
-                el.textContent = originalText
-                el.style.background = '#000'
-            }, 1300)
+                btn.textContent = originalText;
+                btn.style.background = '#000';
+            }, 1000);
         }
-        // Add current modal product to cart
-        function addCurrentToCart() {
-            if (currentModalProduct) {
-                addToCart(currentModalProduct.id)
-                closeModal()
+
+        function showCart() {
+            alert(cartCount > 0 ? `Cart has ${cartCount} items` : 'Cart is empty');
+        }
+
+        // Menu Toggle
+        function toggleMenu() {
+            document.getElementById('mobileNav').classList.toggle('active');
+        }
+
+        // Search Toggle
+        function toggleSearch() {
+            const search = document.getElementById('mobileSearch');
+            search.style.display = search.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.mobile-menu-btn') && !e.target.closest('.mobile-nav')) {
+                document.getElementById('mobileNav').classList.remove('active');
             }
-        }
-        // Toggle wishlist heart
-        function toggleWishlist(el, id) {
-            el.classList.toggle('active')
-        }
-        // Show quick view modal
-        function showQuickView(id) {
-            const product = products.find(p => p.id === id)
-            if (!product) return
-          
-            currentModalProduct = product
-          
-            // Fill modal
-            document.getElementById('modal-image').innerHTML = `
-                <img src="${product.img}" alt="${product.name}">
-            `
-            document.getElementById('modal-name').textContent = product.name
-            document.getElementById('modal-price').innerHTML = `
-                $${product.price}
-                <span style="font-size:16px; font-weight:400; margin-left:12px;">(${product.discount}% OFF)</span>
-            `
-            document.getElementById('modal-old-price').textContent = `$${product.oldPrice}`
-          
-            // Show modal
-            const modal = document.getElementById('quick-modal')
-            modal.style.display = 'flex'
-            document.body.style.overflow = 'hidden'
-        }
-        function closeModal() {
-            const modal = document.getElementById('quick-modal')
-            modal.style.display = 'none'
-            document.body.style.overflow = 'visible'
-        }
-        // Countdown timer
-        function startCountdown() {
-            let countdownDate = new Date().getTime() +
-                (3 * 24 * 60 * 60 * 1000) +
-                (23 * 60 * 60 * 1000) +
-                (19 * 60 * 1000) +
-                (56 * 1000)
-          
-            const daysEl = document.getElementById('days')
-            const hoursEl = document.getElementById('hours')
-            const minutesEl = document.getElementById('minutes')
-            const secondsEl = document.getElementById('seconds')
-          
-            const timerInterval = setInterval(() => {
-                const now = new Date().getTime()
-                const distance = countdownDate - now
-              
-                if (distance < 0) {
-                    clearInterval(timerInterval)
-                    return
-                }
-              
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24))
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000)
-              
-                daysEl.textContent = String(days).padStart(2, '0')
-                hoursEl.textContent = String(hours).padStart(2, '0')
-                minutesEl.textContent = String(minutes).padStart(2, '0')
-                secondsEl.textContent = String(seconds).padStart(2, '0')
-            }, 1000)
-        }
-        // Slider functionality
-        let currentSlideIndex = 0
-        const slideCount = 3
-      
-        function updateSlider() {
-            const track = document.getElementById('slider-track')
-            track.style.transform = `translateX(-${currentSlideIndex * 100}%)`
-          
-            const dots = document.querySelectorAll('.dot')
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentSlideIndex)
-            })
-        }
-      
-        function goToSlide(index) {
-            currentSlideIndex = index
-            updateSlider()
-        }
-      
-        function autoSlide() {
-            currentSlideIndex = (currentSlideIndex + 1) % slideCount
-            updateSlider()
-        }
-      
-        // Product scroll
-        function scrollProducts(direction) {
-            const container = document.getElementById('products-scroll')
-            const cardWidth = 294
-            const scrollAmount = direction === 'left' ? -cardWidth : cardWidth
-            container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
-        }
-      
-        function shopNowClick() {
-            window.scrollTo({
-                top: document.querySelector('.flash-sales').offsetTop - 80,
-                behavior: 'smooth'
-            })
-        }
-      
-        function handleKeyboard(e) {
-            if (e.key === "Escape") {
-                const modal = document.getElementById('quick-modal')
-                if (modal.style.display === 'flex') closeModal()
-            }
-        }
-      
-        function initialize() {
-            renderProducts()
-            startCountdown()
-            updateSlider()
-            let slideInterval = setInterval(autoSlide, 5200)
-          
-            const hero = document.querySelector('.hero-section')
-            hero.addEventListener('mouseenter', () => clearInterval(slideInterval))
-            hero.addEventListener('mouseleave', () => {
-                slideInterval = setInterval(autoSlide, 5200)
-            })
-          
-            const modal = document.getElementById('quick-modal')
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) closeModal()
-            })
-          
-            const searchInput = document.getElementById('search-input')
-            searchInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    if (this.value.trim() !== '') {
-                        alert('Search results for: ' + this.value + '\n\n(Real search would filter products here)')
-                    }
-                }
-            })
-          
-            document.getElementById('cart-btn').addEventListener('click', () => {
-                if (cartCount > 0) {
-                    alert(`Your cart has ${cartCount} items!\n\nCheckout would open here.`)
-                } else {
-                    alert('Your cart is empty.\nAdd some products!')
-                }
-            })
-          
-            document.addEventListener('keydown', handleKeyboard)
-          
-            console.log('%c✅ Premium eCommerce UI ready. Fully responsive and interactive.', 'color:#DB4444; font-family:monospace')
-        }
-      
-        window.onload = initialize
+        });
+
+        // Initialize
+        renderFlashProducts();
+        renderBestSellers();
     </script>
 </body>
 </html>
