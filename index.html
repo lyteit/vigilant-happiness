@@ -6,17 +6,14 @@
     <title>Exclusive - Shop Premium</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600&amp;display=swap');
-
         :root {
             --primary-red: #DB4444;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Inter', system_ui, sans-serif;
             background-color: #FAFAFA;
@@ -24,7 +21,6 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
         .header {
             position: sticky;
             top: 0;
@@ -33,7 +29,6 @@
             border-bottom: 1px solid #eee;
             padding: 20px 0;
         }
-
         .header-content {
             max-width: 1280px;
             margin: 0 auto;
@@ -42,7 +37,6 @@
             align-items: center;
             justify-content: space-between;
         }
-
         .logo {
             font-family: 'Poppins', sans-serif;
             font-size: 24px;
@@ -50,28 +44,23 @@
             color: #000;
             text-decoration: none;
         }
-
         .nav-links {
             display: flex;
             gap: 32px;
             list-style: none;
         }
-
         .nav-links a {
             text-decoration: none;
             color: #000;
             font-weight: 500;
             transition: color 0.3s;
         }
-
         .nav-links a:hover {
             color: var(--primary-red);
         }
-
         .nav-links a.active {
             position: relative;
         }
-
         .nav-links a.active:after {
             content: '';
             position: absolute;
@@ -81,18 +70,15 @@
             height: 2px;
             background: var(--primary-red);
         }
-
         .header-right {
             display: flex;
             align-items: center;
             gap: 24px;
         }
-
         .search-container {
             position: relative;
             width: 320px;
         }
-
         .search-container input {
             width: 100%;
             padding: 10px 20px 10px 45px;
@@ -101,13 +87,11 @@
             font-size: 14px;
             transition: all 0.3s;
         }
-
         .search-container input:focus {
             outline: none;
             border-color: var(--primary-red);
             box-shadow: 0 0 0 3px rgba(219, 68, 68, 0.1);
         }
-
         .search-icon {
             position: absolute;
             left: 18px;
@@ -116,7 +100,6 @@
             width: 18px;
             height: 18px;
         }
-
         .icon-btn {
             background: none;
             border: none;
@@ -124,15 +107,12 @@
             position: relative;
             transition: transform 0.3s;
         }
-
         .icon-btn:hover {
             transform: scale(1.1);
         }
-
         .cart-icon {
             position: relative;
         }
-
         .cart-count {
             position: absolute;
             top: -4px;
@@ -148,7 +128,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .main-container {
             max-width: 1280px;
             margin: 0 auto;
@@ -156,17 +135,14 @@
             display: flex;
             gap: 40px;
         }
-
         .sidebar {
             width: 220px;
             flex-shrink: 0;
             padding-top: 30px;
         }
-
         .sidebar ul {
             list-style: none;
         }
-
         .sidebar li {
             padding: 12px 0;
             display: flex;
@@ -178,18 +154,15 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-
         .sidebar li:hover {
             color: var(--primary-red);
             padding-left: 8px;
         }
-
         .sidebar li:after {
             content: '›';
             font-size: 20px;
             opacity: 0.6;
         }
-
         .hero-section {
             flex: 1;
             margin-top: 30px;
@@ -199,20 +172,17 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
-
         .slider-container {
             position: relative;
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
-
         .slider-track {
             display: flex;
             height: 100%;
             transition: transform 0.6s cubic-bezier(0.32, 0.72, 0, 1);
         }
-
         .slide {
             min-width: 100%;
             height: 100%;
@@ -222,26 +192,22 @@
             position: relative;
             color: white;
         }
-
         .slide-content {
             padding-left: 80px;
             max-width: 45%;
             z-index: 2;
         }
-
         .slide-content .apple-logo {
             font-size: 42px;
             margin-bottom: 8px;
             display: block;
         }
-
         .slide-content h2 {
             font-size: 16px;
             font-weight: 400;
             letter-spacing: 2px;
             margin-bottom: 12px;
         }
-
         .slide-content h1 {
             font-family: 'Poppins', sans-serif;
             font-size: 48px;
@@ -249,7 +215,6 @@
             font-weight: 600;
             margin-bottom: 24px;
         }
-
         .shop-btn {
             display: inline-flex;
             align-items: center;
@@ -264,13 +229,11 @@
             text-decoration: none;
             transition: all 0.3s;
         }
-
         .shop-btn:hover {
             background: white;
             color: #000;
             transform: translateY(-2px);
         }
-
         .slide-image {
             position: absolute;
             right: 40px;
@@ -280,7 +243,6 @@
             z-index: 1;
             filter: drop-shadow(30px 30px 40px rgba(0, 0, 0, 0.4));
         }
-
         .slider-dots {
             position: absolute;
             bottom: 30px;
@@ -290,7 +252,6 @@
             gap: 10px;
             z-index: 10;
         }
-
         .dot {
             width: 12px;
             height: 12px;
@@ -299,45 +260,38 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-
         .dot.active {
             background: var(--primary-red);
             width: 32px;
             border-radius: 20px;
         }
-
         .flash-sales {
             margin-top: 60px;
             padding-bottom: 60px;
         }
-
         .section-header {
             display: flex;
             align-items: center;
             gap: 16px;
             margin-bottom: 20px;
         }
-
         .red-bar {
             width: 20px;
             height: 40px;
             background: var(--primary-red);
             border-radius: 4px;
         }
-
         .section-title {
             font-family: 'Poppins', sans-serif;
             font-size: 28px;
             font-weight: 600;
         }
-
         .timer-container {
             display: flex;
             align-items: center;
             gap: 24px;
             margin-left: auto;
         }
-
         .timer-box {
             text-align: center;
             background: white;
@@ -346,7 +300,6 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.06);
             min-width: 68px;
         }
-
         .timer-number {
             font-family: 'Poppins', sans-serif;
             font-size: 28px;
@@ -354,20 +307,17 @@
             line-height: 1;
             color: #000;
         }
-
         .timer-label {
             font-size: 11px;
             font-weight: 500;
             color: #666;
             text-transform: uppercase;
         }
-
         .flash-nav {
             display: flex;
             gap: 12px;
             margin-left: 40px;
         }
-
         .flash-nav button {
             width: 46px;
             height: 46px;
@@ -380,12 +330,10 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-
         .flash-nav button:hover {
             background: #eee;
             transform: scale(1.05);
         }
-
         .products-scroll {
             display: flex;
             gap: 24px;
@@ -394,11 +342,9 @@
             padding: 10px 0 30px;
             scrollbar-width: none;
         }
-
         .products-scroll::-webkit-scrollbar {
             display: none;
         }
-
         .product-card {
             min-width: 270px;
             background: white;
@@ -408,12 +354,10 @@
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             position: relative;
         }
-
         .product-card:hover {
             transform: translateY(-12px);
             box-shadow: 0 20px 30px rgba(0,0,0,0.12);
         }
-
         .product-image-container {
             height: 240px;
             background: #f8f8f8;
@@ -423,17 +367,14 @@
             justify-content: center;
             overflow: hidden;
         }
-
         .product-image-container img {
             max-height: 210px;
             width: auto;
             transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-
         .product-card:hover .product-image-container img {
             transform: scale(1.12);
         }
-
         .discount-badge {
             position: absolute;
             top: 18px;
@@ -445,7 +386,6 @@
             padding: 4px 12px;
             border-radius: 4px;
         }
-
         .card-icons {
             position: absolute;
             top: 18px;
@@ -454,7 +394,6 @@
             flex-direction: column;
             gap: 10px;
         }
-
         .card-icon {
             width: 38px;
             height: 38px;
@@ -467,25 +406,20 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-
         .card-icon:hover {
             background: #fff;
             transform: scale(1.15);
         }
-
         .card-icon svg {
             width: 18px;
             height: 18px;
         }
-
         .card-heart.active svg {
             fill: var(--primary-red);
         }
-
         .product-info {
             padding: 18px 20px 24px;
         }
-
         .product-name {
             font-weight: 500;
             font-size: 15px;
@@ -496,7 +430,6 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-
         .product-price {
             display: flex;
             align-items: center;
@@ -504,17 +437,14 @@
             font-size: 18px;
             font-weight: 600;
         }
-
         .current-price {
             color: #000;
         }
-
         .old-price {
             color: #999;
             text-decoration: line-through;
             font-weight: 400;
         }
-
         .add-to-cart {
             position: absolute;
             bottom: 0;
@@ -530,12 +460,10 @@
             transform: translateY(100%);
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-
         .product-card:hover .add-to-cart {
             opacity: 1;
             transform: translateY(0);
         }
-
         /* Modal */
         .modal {
             position: fixed;
@@ -547,7 +475,6 @@
             z-index: 9999;
             animation: fadeIn 0.3s;
         }
-
         .modal-content {
             background: white;
             max-width: 920px;
@@ -557,7 +484,6 @@
             display: flex;
             box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
         }
-
         .modal-image {
             flex: 1;
             background: #f8f8f8;
@@ -566,20 +492,17 @@
             justify-content: center;
             padding: 40px;
         }
-
         .modal-image img {
             max-width: 100%;
             max-height: 420px;
             object-fit: contain;
         }
-
         .modal-details {
             flex: 1;
             padding: 40px;
             display: flex;
             flex-direction: column;
         }
-
         .modal-close {
             position: absolute;
             top: 20px;
@@ -594,30 +517,25 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-
         .modal-details h2 {
             font-size: 26px;
             margin-bottom: 12px;
         }
-
         .modal-price {
             font-size: 26px;
             font-weight: 700;
             margin: 16px 0;
         }
-
         .modal-old-price {
             font-size: 18px;
             color: #999;
             text-decoration: line-through;
         }
-
         .modal-desc {
             margin: 24px 0;
             color: #555;
             line-height: 1.7;
         }
-
         /* Responsive */
         @media (max-width: 1024px) {
             .main-container {
@@ -627,7 +545,6 @@
                 display: none;
             }
         }
-
         @media (max-width: 768px) {
             .header-content {
                 padding: 0 20px;
@@ -645,7 +562,6 @@
                 font-size: 32px;
             }
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -658,7 +574,6 @@
         <div class="header-content">
             <!-- Logo -->
             <a href="#" class="logo">Exclusive</a>
-
             <!-- Navigation -->
             <ul class="nav-links">
                 <li><a href="#" class="active">Home</a></li>
@@ -666,7 +581,6 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">Sign Up</a></li>
             </ul>
-
             <!-- Right side -->
             <div class="header-right">
                 <div class="search-container">
@@ -675,13 +589,11 @@
                     </svg>
                     <input type="text" id="search-input" placeholder="What are you looking for?">
                 </div>
-
                 <button class="icon-btn" id="wishlist-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
                     </svg>
                 </button>
-
                 <button class="icon-btn cart-icon" id="cart-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M9 19a2 2 0 11-4 0 2 2 0 014 0zM19 19a2 2 0 11-4 0 2 2 0 014 0zM3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -691,7 +603,6 @@
             </div>
         </div>
     </header>
-
     <div class="main-container">
         <!-- SIDEBAR -->
         <aside class="sidebar">
@@ -707,7 +618,6 @@
                 <li>Health &amp; Beauty</li>
             </ul>
         </aside>
-
         <!-- MAIN CONTENT -->
         <div style="flex: 1;">
             <!-- HERO SLIDER -->
@@ -721,13 +631,12 @@
                                 <h2>iPhone 14 Series</h2>
                                 <h1>Up to 10%<br>off Voucher</h1>
                                 <a href="#" onclick="shopNowClick()" class="shop-btn">
-                                    Shop Now 
+                                    Shop Now
                                     <span style="font-size: 22px;">→</span>
                                 </a>
                             </div>
                             <img src="https://picsum.photos/id/1015/680/520" alt="iPhone 14 Series" class="slide-image">
                         </div>
-
                         <!-- Slide 2 - Headphones -->
                         <div class="slide">
                             <div class="slide-content">
@@ -735,13 +644,12 @@
                                 <h2>Sony WH-1000XM5</h2>
                                 <h1>Premium Noise<br>Cancelling</h1>
                                 <a href="#" onclick="shopNowClick()" class="shop-btn">
-                                    Shop Now 
+                                    Shop Now
                                     <span style="font-size: 22px;">→</span>
                                 </a>
                             </div>
                             <img src="https://picsum.photos/id/160/680/520" alt="Headphones" class="slide-image">
                         </div>
-
                         <!-- Slide 3 - Smart Watch -->
                         <div class="slide">
                             <div class="slide-content">
@@ -749,14 +657,13 @@
                                 <h2>Apple Watch Ultra</h2>
                                 <h1>Up to 15% off</h1>
                                 <a href="#" onclick="shopNowClick()" class="shop-btn">
-                                    Shop Now 
+                                    Shop Now
                                     <span style="font-size: 22px;">→</span>
                                 </a>
                             </div>
                             <img src="https://picsum.photos/id/201/680/520" alt="Smart Watch" class="slide-image">
                         </div>
                     </div>
-
                     <!-- Dots -->
                     <div class="slider-dots" id="slider-dots">
                         <div class="dot active" onclick="goToSlide(0)"></div>
@@ -765,7 +672,6 @@
                     </div>
                 </div>
             </section>
-
             <!-- FLASH SALES -->
             <section class="flash-sales">
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
@@ -773,7 +679,6 @@
                         <div class="red-bar"></div>
                         <h2 class="section-title">Today's Flash Sales</h2>
                     </div>
-
                     <!-- Timer -->
                     <div class="timer-container" id="timer-container">
                         <div class="timer-box">
@@ -781,25 +686,24 @@
                             <div class="timer-label">Days</div>
                         </div>
                         <div style="font-size: 32px; font-weight: 300; color: #ddd; align-self: flex-end; margin-bottom: 6px;">:</div>
-                        
+                       
                         <div class="timer-box">
                             <div class="timer-number" id="hours">23</div>
                             <div class="timer-label">Hours</div>
                         </div>
                         <div style="font-size: 32px; font-weight: 300; color: #ddd; align-self: flex-end; margin-bottom: 6px;">:</div>
-                        
+                       
                         <div class="timer-box">
                             <div class="timer-number" id="minutes">19</div>
                             <div class="timer-label">Minutes</div>
                         </div>
                         <div style="font-size: 32px; font-weight: 300; color: #ddd; align-self: flex-end; margin-bottom: 6px;">:</div>
-                        
+                       
                         <div class="timer-box">
                             <div class="timer-number" id="seconds">56</div>
                             <div class="timer-label">Seconds</div>
                         </div>
                     </div>
-
                     <!-- Nav arrows -->
                     <div class="flash-nav">
                         <button onclick="scrollProducts('left')">
@@ -810,36 +714,173 @@
                         </button>
                     </div>
                 </div>
-
                 <!-- Products -->
                 <div class="products-scroll" id="products-scroll">
                     <!-- Populated by JS -->
                 </div>
             </section>
+
+            <!-- BEST SELLING PRODUCTS - EXACTLY AS IN YOUR IMAGE -->
+            <section style="margin-top: 60px; padding-bottom: 60px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <div class="red-bar"></div>
+                        <div style="color: var(--primary-red); font-weight: 600; font-size: 14px; letter-spacing: 1px;">THIS MONTH</div>
+                        <h2 class="section-title" style="margin: 0;">Best Selling Products</h2>
+                    </div>
+                    <button onclick="alert('All best selling products would load here')" 
+                            style="background: var(--primary-red); color: white; border: none; padding: 12px 40px; border-radius: 4px; font-weight: 600; cursor: pointer;">
+                        View All
+                    </button>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px;">
+                    
+                    <!-- Card 1: The north coat -->
+                    <div class="product-card" style="min-width: auto;">
+                        <div class="product-image-container">
+                            <img src="https://picsum.photos/id/1016/320/260" alt="The north coat">
+                            <div class="card-icons">
+                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
+                                    </svg>
+                                </div>
+                                <div class="card-icon" onclick="alert('Quick view opened for The north coat'); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">The north coat</div>
+                            <div class="product-price">
+                                <span class="current-price">$260</span>
+                                <span class="old-price">$360</span>
+                            </div>
+                        </div>
+                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
+                            Add To Cart
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Gucci duffle bag -->
+                    <div class="product-card" style="min-width: auto;">
+                        <div class="product-image-container">
+                            <img src="https://picsum.photos/id/160/320/260" alt="Gucci duffle bag">
+                            <div class="card-icons">
+                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
+                                    </svg>
+                                </div>
+                                <div class="card-icon" onclick="alert('Quick view opened for Gucci duffle bag'); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Gucci duffle bag</div>
+                            <div class="product-price">
+                                <span class="current-price">$960</span>
+                                <span class="old-price">$1160</span>
+                            </div>
+                        </div>
+                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
+                            Add To Cart
+                        </div>
+                    </div>
+
+                    <!-- Card 3: RGB liquid CPU Cooler -->
+                    <div class="product-card" style="min-width: auto;">
+                        <div class="product-image-container">
+                            <img src="https://picsum.photos/id/201/320/260" alt="RGB liquid CPU Cooler">
+                            <div class="card-icons">
+                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
+                                    </svg>
+                                </div>
+                                <div class="card-icon" onclick="alert('Quick view opened for RGB liquid CPU Cooler'); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">RGB liquid CPU Cooler</div>
+                            <div class="product-price">
+                                <span class="current-price">$160</span>
+                                <span class="old-price">$170</span>
+                            </div>
+                        </div>
+                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
+                            Add To Cart
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Small BookShelf -->
+                    <div class="product-card" style="min-width: auto;">
+                        <div class="product-image-container">
+                            <img src="https://picsum.photos/id/251/320/260" alt="Small BookShelf">
+                            <div class="card-icons">
+                                <div class="card-icon card-heart" onclick="toggleWishlist(this); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364" />
+                                    </svg>
+                                </div>
+                                <div class="card-icon" onclick="alert('Quick view opened for Small BookShelf'); event.stopImmediatePropagation()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5 16.477 5 20.268 7.943 21.542 12 20.268 16.057 16.477 19 12 19 7.523 19 3.732 16.057 2.458 12z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">Small BookShelf</div>
+                            <div class="product-price">
+                                <span class="current-price">$360</span>
+                            </div>
+                        </div>
+                        <div onclick="addToCartFromBest(this); event.stopImmediatePropagation()" class="add-to-cart">
+                            Add To Cart
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
         </div>
     </div>
-
     <!-- QUICK VIEW MODAL -->
     <div class="modal" id="quick-modal">
         <div class="modal-content" onclick="event.stopImmediatePropagation()">
             <button class="modal-close" onclick="closeModal()">✕</button>
-            
+           
             <div class="modal-image" id="modal-image">
                 <!-- JS inserted -->
             </div>
-            
+           
             <div class="modal-details">
                 <h2 id="modal-name"></h2>
                 <div class="modal-price" id="modal-price"></div>
                 <div class="modal-old-price" id="modal-old-price"></div>
-                
+               
                 <p class="modal-desc" id="modal-desc">
-                    Premium quality product with excellent performance and durability. 
+                    Premium quality product with excellent performance and durability.
                     Perfect for everyday use and professional needs.
                 </p>
-                
+               
                 <div style="margin-top: auto;">
-                    <button onclick="addCurrentToCart()" 
+                    <button onclick="addCurrentToCart()"
                             style="width: 100%; background: #000; color: white; border: none; padding: 16px; font-size: 16px; font-weight: 600; border-radius: 6px; cursor: pointer;">
                         Add to Cart
                     </button>
@@ -847,7 +888,6 @@
             </div>
         </div>
     </div>
-
     <script>
         // Product data
         let products = [
@@ -892,15 +932,12 @@
                 img: "https://picsum.photos/id/29/320/260"
             }
         ]
-
         let cartCount = 0
         let currentModalProduct = null
-
         // Render products
         function renderProducts() {
             const container = document.getElementById('products-scroll')
             container.innerHTML = ''
-
             products.forEach(product => {
                 const discount = product.discount
                 const cardHTML = `
@@ -908,7 +945,7 @@
                         <div class="product-image-container">
                             <img src="${product.img}" alt="${product.name}">
                             <div class="discount-badge">-${discount}%</div>
-                            
+                           
                             <div class="card-icons">
                                 <!-- Wishlist -->
                                 <div class="card-icon card-heart" onclick="toggleWishlist(this, ${product.id}); event.stopImmediatePropagation()">
@@ -925,7 +962,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+                       
                         <div class="product-info">
                             <div class="product-name">${product.name}</div>
                             <div class="product-price">
@@ -933,8 +970,8 @@
                                 <span class="old-price">$${product.oldPrice}</span>
                             </div>
                         </div>
-                        
-                        <div onclick="addToCart(${product.id}); event.stopImmediatePropagation()" 
+                       
+                        <div onclick="addToCart(${product.id}); event.stopImmediatePropagation()"
                              class="add-to-cart">
                             Add To Cart
                         </div>
@@ -943,12 +980,11 @@
                 container.innerHTML += cardHTML
             })
         }
-
         // Add to cart
         function addToCart(id) {
             cartCount++
             document.getElementById('cart-count').textContent = cartCount
-            
+           
             // Animation feedback
             const btns = document.querySelectorAll('.add-to-cart')
             for (let btn of btns) {
@@ -957,7 +993,7 @@
                     btn.style.transition = 'none'
                     btn.textContent = '✓ Added!'
                     btn.style.background = '#22c55e'
-                    
+                   
                     setTimeout(() => {
                         btn.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)'
                         btn.textContent = originalText
@@ -967,7 +1003,22 @@
                 }
             }
         }
-
+        // NEW HELPER FOR BEST SELLING CARDS
+        function addToCartFromBest(el) {
+            cartCount++
+            document.getElementById('cart-count').textContent = cartCount
+           
+            const originalText = el.textContent
+            el.style.transition = 'none'
+            el.textContent = '✓ Added!'
+            el.style.background = '#22c55e'
+           
+            setTimeout(() => {
+                el.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)'
+                el.textContent = originalText
+                el.style.background = '#000'
+            }, 1300)
+        }
         // Add current modal product to cart
         function addCurrentToCart() {
             if (currentModalProduct) {
@@ -975,151 +1026,134 @@
                 closeModal()
             }
         }
-
         // Toggle wishlist heart
         function toggleWishlist(el, id) {
             el.classList.toggle('active')
         }
-
         // Show quick view modal
         function showQuickView(id) {
             const product = products.find(p => p.id === id)
             if (!product) return
-            
+           
             currentModalProduct = product
-            
+           
             // Fill modal
             document.getElementById('modal-image').innerHTML = `
                 <img src="${product.img}" alt="${product.name}">
             `
             document.getElementById('modal-name').textContent = product.name
             document.getElementById('modal-price').innerHTML = `
-                $${product.price} 
+                $${product.price}
                 <span style="font-size:16px; font-weight:400; margin-left:12px;">(${product.discount}% OFF)</span>
             `
             document.getElementById('modal-old-price').textContent = `$${product.oldPrice}`
-            
+           
             // Show modal
             const modal = document.getElementById('quick-modal')
             modal.style.display = 'flex'
             document.body.style.overflow = 'hidden'
         }
-
         function closeModal() {
             const modal = document.getElementById('quick-modal')
             modal.style.display = 'none'
             document.body.style.overflow = 'visible'
         }
-
         // Countdown timer
         function startCountdown() {
-            // Target: 3 days + 23 hours + 19 min + 56 sec from now
-            let countdownDate = new Date().getTime() + 
-                (3 * 24 * 60 * 60 * 1000) + 
-                (23 * 60 * 60 * 1000) + 
-                (19 * 60 * 1000) + 
+            let countdownDate = new Date().getTime() +
+                (3 * 24 * 60 * 60 * 1000) +
+                (23 * 60 * 60 * 1000) +
+                (19 * 60 * 1000) +
                 (56 * 1000)
-            
+           
             const daysEl = document.getElementById('days')
             const hoursEl = document.getElementById('hours')
             const minutesEl = document.getElementById('minutes')
             const secondsEl = document.getElementById('seconds')
-            
+           
             const timerInterval = setInterval(() => {
                 const now = new Date().getTime()
                 const distance = countdownDate - now
-                
+               
                 if (distance < 0) {
                     clearInterval(timerInterval)
                     return
                 }
-                
+               
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24))
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000)
-                
+               
                 daysEl.textContent = String(days).padStart(2, '0')
                 hoursEl.textContent = String(hours).padStart(2, '0')
                 minutesEl.textContent = String(minutes).padStart(2, '0')
                 secondsEl.textContent = String(seconds).padStart(2, '0')
             }, 1000)
         }
-
         // Slider functionality
         let currentSlideIndex = 0
         const slideCount = 3
-        
+       
         function updateSlider() {
             const track = document.getElementById('slider-track')
             track.style.transform = `translateX(-${currentSlideIndex * 100}%)`
-            
-            // Update dots
+           
             const dots = document.querySelectorAll('.dot')
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === currentSlideIndex)
             })
         }
-        
+       
         function goToSlide(index) {
             currentSlideIndex = index
             updateSlider()
         }
-        
+       
         function autoSlide() {
             currentSlideIndex = (currentSlideIndex + 1) % slideCount
             updateSlider()
         }
-        
+       
         // Product scroll
         function scrollProducts(direction) {
             const container = document.getElementById('products-scroll')
-            const cardWidth = 294 // 270px card + 24px gap
+            const cardWidth = 294
             const scrollAmount = direction === 'left' ? -cardWidth : cardWidth
             container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
         }
-        
+       
         function shopNowClick() {
             window.scrollTo({
                 top: document.querySelector('.flash-sales').offsetTop - 80,
                 behavior: 'smooth'
             })
         }
-        
-        // Keyboard support for modal close
+       
         function handleKeyboard(e) {
             if (e.key === "Escape") {
                 const modal = document.getElementById('quick-modal')
                 if (modal.style.display === 'flex') closeModal()
             }
         }
-        
-        // Initialize everything
+       
         function initialize() {
-            // Render products
             renderProducts()
-            
-            // Start countdown
             startCountdown()
-            
-            // Slider auto play
             updateSlider()
             let slideInterval = setInterval(autoSlide, 5200)
-            
-            // Pause slider on hover
+           
             const hero = document.querySelector('.hero-section')
             hero.addEventListener('mouseenter', () => clearInterval(slideInterval))
             hero.addEventListener('mouseleave', () => {
                 slideInterval = setInterval(autoSlide, 5200)
             })
-            
-            // Close modal when clicking outside content
+           
             const modal = document.getElementById('quick-modal')
             modal.addEventListener('click', function(e) {
                 if (e.target === modal) closeModal()
             })
-            
-            // Search input fake functionality
+           
             const searchInput = document.getElementById('search-input')
             searchInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
@@ -1128,8 +1162,7 @@
                     }
                 }
             })
-            
-            // Cart button demo
+           
             document.getElementById('cart-btn').addEventListener('click', () => {
                 if (cartCount > 0) {
                     alert(`Your cart has ${cartCount} items!\n\nCheckout would open here.`)
@@ -1137,15 +1170,12 @@
                     alert('Your cart is empty.\nAdd some products!')
                 }
             })
-            
-            // Keyboard listener
+           
             document.addEventListener('keydown', handleKeyboard)
-            
-            // Production-ready touch scroll hint
+           
             console.log('%c✅ Premium eCommerce UI ready. Fully responsive and interactive.', 'color:#DB4444; font-family:monospace')
         }
-        
-        // Boot the app
+       
         window.onload = initialize
     </script>
 </body>
