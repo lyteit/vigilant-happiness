@@ -11,7 +11,7 @@
     
     <!-- Firebase SDKs -->
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
         import { 
             getFirestore, 
             collection, 
@@ -32,7 +32,7 @@
             onSnapshot,
             runTransaction,
             serverTimestamp
-        } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
+        } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
         
         import { 
             getAuth, 
@@ -44,7 +44,7 @@
             sendPasswordResetEmail,
             reload,
             updateProfile
-        } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+        } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
         // Firebase configuration
         const firebaseConfig = {
@@ -62,7 +62,7 @@
         const auth = getAuth(app);
 
         // ── APP CHECK (reCAPTCHA v3) ── loaded dynamically so 404 won't break app
-        import("https://www.gstatic.com/firebasejs/12.7.0/firebase-app-check.js").then(({ initializeAppCheck, ReCaptchaV3Provider }) => {
+        import("https://www.gstatic.com/firebasejs/11.6.0/firebase-app-check.js").then(({ initializeAppCheck, ReCaptchaV3Provider }) => {
             try {
                 initializeAppCheck(app, {
                     provider: new ReCaptchaV3Provider('6Le0V4UsAAAAAPXzLAEOBP0wKniv9hBKfoDjWYxv'),
